@@ -36,7 +36,7 @@ def scrape():
     browser.visit(url)
 
     html = browser.html
-    soup = BeautifulSoup(html, "html.parser")
+    soup = bs(html, "html.parser")
 
     news = soup.find("div", class_="list_text")
     news_paragraph = news.find("div", class_="article_teaser_body").text
@@ -54,7 +54,7 @@ def scrape():
     browser.visit(jpl_url)
 
     html = browser.html
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = bs(html, 'html.parser')
 
     # Find first featured Mars image
     image = soup.find("img",class_="thumb")["src"]
@@ -84,7 +84,7 @@ def scrape():
     mars_facts = facts_table.to_html(classes = 'mars_facts')
     mars_facts = mars_facts.replace('\n', ' ')
 
-    mars_dict["html_table_string"] mars_facts
+    mars_dict["html_table_string"] = mars_facts
     #--------------------------------------------------------------------------------------------
 
     #####
@@ -96,14 +96,14 @@ def scrape():
     browser.visit(hemi_url)
 
     html = browser.html
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = bs(html, 'html.parser')
     hemispheres = []
 
     for x in range (4):
         image_array = browser.find_by_tag('h3')
         image_array[x].click()
         html = browser.html
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = bs(html, 'html.parser')
         src = soup.find("img", class_="wide-image")["src"]
         x_url = 'https://astrogeology.usgs.gov'+src
         x_title = soup.find("h2", class_="title").text
