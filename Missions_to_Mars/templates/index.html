@@ -4,15 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mars Data Info</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
 
+    <link rel="stylesheet" href="style/style.css">
+
 </head>
 <body>
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1>Mars Data</h1>
+      <p>
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Press Here to Scrape New Mars Data</a>
+      </p>
+
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Mars News - Most Recent Article</h2>
+          <h4> {{ mars.mars_news_title }}</h4>
+          
+          
+          <p> {{mars.mars_news_paragraph}} </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 big_box">
+          <h2>JPL - Featured Mars Image</h2>
+          <img src="{{mars.featured_image_url}}" alt="JPL featured Mars img" />
+        </div>
+
+        
+          
+
+        <div class="col-md-6">
+            <h3>Facts About Mars</h3>
+            {{mars.html_table_string | safe }}
+        </div>
+        
+
+      </div>
+
+    </div>
+    <div class="container-fluid">
+
+      <div class="jumbotron">
+        <h1>USGS - Mars Hemispheres</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+              <img src="{{mars.Mars_img_dict[0]['x_url']}}" alt="Mars Hemisphere1" style="width:400px;height:400px;border:0;">
+              <h3>{mars.Mars_img_dict[0]['x_title']}}</h3>
+            </div>
+            <div class="col-md-6">
+              <img src="{{mars.Mars_img_dict[1]['x_url']}}" alt="Mars Hemisphere2" style="width:400px;height:400px;border:0;">
+              <h3>{{mars.Mars_img_dict[1]['x_title']}}</h3>
+            </div>
+          </div>
 
 
+          <div class="row">
+            <div class="col-md-6">
+              <img src="{{mars.Mars_img_dict[2]['x_url']}}" alt="Mars Hemisphere3" style="width:400px;height:400px;border:0;">
+              <h3>{{mars.Mars_img_dict[2]['x_title']}}</h3>
+            </div>
+            <div class="col-md-6">
+              <img src="{{mars.Mars_img_dict[3]['x_url']}}" alt="Mars Hemisphere4" style="width:400px;height:400px;border:0;">
+              <h3>{{mars.Mars_img_dict[3]['x_title']}}</h3>
+            </div>
+          </div>
 
 
-    
+      </div>
+    </div>
+  </div>
+  
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous">
+    </script>
+
 </body>
 </html>
