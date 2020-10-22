@@ -1,3 +1,9 @@
+NOTE: In the event that this code returns an error where it doesn't load the BeautifulSoup library, please simply run the "python app.py" command again. I've been trying to figure out why this happens but can't seem to figure out what causes the BeautifulSoup library to sometimes have trouble loading the soup object.
+
+However, most of the time it works and when it returns a Item Type: None does not have a find function error simply running it again returns working code and a properly filled out website. Thank you!
+
+
+
 # Web-Scraping-HW
 A Data Science Bootcamp challenge to use Web Scraping with Jupyter Notebooks, MongoDB, PyMongo, Flask, and Splinters
 
