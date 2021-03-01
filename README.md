@@ -3,6 +3,9 @@
 # Web-Scraping-to-HTML-with-Database
 This program uses Web Scraping with Jupyter Notebooks, MongoDB, PyMongo, Flask, and Splinters - all in order to render data on a dashboard and store it in a MongoDB database.
 
+App Screenshot 1.png
+![alt text](https://github.com/riggiobill/Web-Scraping-to-HTML-with-Database/blob/main/Screenshots/App%20Screenshot%201.png?raw=true)
+
 
 
 To perform this task, I built a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following outlines the steps required.
